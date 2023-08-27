@@ -1,18 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lip Lingo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+  </head>
 
-    <h1>IBM CONTEST WINNING SITE</h1>
+  <body>
+    <nav class="navbar">
+      <label class="logo" style="font-weight: 800">
+        <svg
+          class="logo"
+          width="200"
+          height="200"
+          viewBox="0 0 200 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_105_284)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0H50V50H0V0ZM100 50H50V100H0V150H50V200H100V150H150V200H200V150H150V100H200V50H150V0H100V50ZM100 100H150V50H100V100ZM100 100V150H50V100H100Z"
+              fill="url(#paint0_linear_105_284)"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_105_284"
+              x1="100"
+              y1="0"
+              x2="100"
+              y2="200"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#A7B5FF" />
+              <stop offset="1" stop-color="#F3ACFF" />
+            </linearGradient>
+            <clipPath id="clip0_105_284">
+              <rect width="200" height="200" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        Lip Lingo</label
+      > 
+      <ul>
+        <li><a class="button" href="#home">Home</a></li>
+        <li><a class="button" href="#features">How it works</a></li>
+        <li><a class="button" href="model.html">Try it out!</a></li>
+        <li><a class="button" href="team">Team</a></li>
+      </ul>
+      <div class="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
 
-    <form class="p-3 text-center" action='/', method="post" enctype="multipart/form-data">
-        <input type="file" name="videoFile" >
-        <input type="submit" value="Predict" >
-    </form>
-
-</body>
+    <section id="home">
+      <div class="hero">
+        <div class="left">
+          <p>Empowering Voices, Enriching Education.</p>
+          <p style="font-size: 45%; margin-top: 2%">
+            Innovative
+            <span
+              style="
+                color: transparent;
+                background-clip: text;
+                background-image: linear-gradient(
+                  to right,
+                  var(--tw-gradient-stops)
+                );
+                background-color: #f59e0b;
+              "
+              >Silent Speech Recognition</span
+            >
+            for Students Everywhere.
+          </p>
+        </div>
+        <div class="right">
+          <img class="hero-image" src="images/Language-translator.svg" />
+        </div>
+        <a href="#" class="badge"
+          >Introducing Lip Lingo!<svg
+            class="-ml-1 h-3.5 w-3.5 absolute transition-all group-hover:translate-x-1 group-hover:opacity-0"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
+            ></path></svg
+        ></a>
+      </div>
+    </section>
+  </body>
 </html>
