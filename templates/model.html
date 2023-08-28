@@ -55,6 +55,7 @@
         <div class="menu-line"></div>
       </div>
     </nav>
+    <p>{{ prediction }}</p>
     <!-- {% for text in video_texts %}
     <p>{{ video_texts[text] }}</p>
   {% endfor %} -->
@@ -72,6 +73,7 @@
         <video width="700" height="350" controls id="video">
           <source id="videoSource" src="static/data/s1/bbaf2n.mp4" type="video/mp4">
       </video>
+      <button id="submitBtn">Submit</button>
       <!-- {{url_for('static', filename='data/s1/bbaf2n.mp4')}} -->
       </div>
     </div>

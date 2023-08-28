@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, jsonify, request
 import loads, model, tensorflow as tf
 import os
 
@@ -14,7 +14,8 @@ def landing_page():
 def model_page():
     video_list = get_video_list()
     video_texts = get_video_texts()
-    return render_template('model.html', video_list=video_list, video_texts=video_texts)
+    prediction = process_selected_video()
+    return render_template('model.html', video_list=video_list, video_texts=video_texts, prediction=prediction)
 
 def get_video_list():
     video_folder = 'static/data/s1'
@@ -40,6 +41,22 @@ def get_video_texts():
             video_texts[align] = stri[:-1]
 
     return video_texts
+
+@app.route('/process_selected_video', methods=['POST'])
+def process_selected_video():
+    data = request.json
+    selected_video = data.get('video').split('.')[0]
+    path = 'static/data/s1/' + selected_video + '.mpg'
+    video = loads.load_video(path)
+
+    DLmodel = model.load_model()
+    yhat = DLmodel.predict(tf.expand_dims(video, axis=0))
+    decoder = tf.keras.backend.ctc_decode(yhat, [75], greedy=True)[0][0].numpy()
+
+    prediction = tf.strings.reduce_join(loads.num_to_char(decoder)).numpy().decode('utf-8')
+
+    response_data = {'message': 'Video received successfully'}
+    return jsonify(response_data)
 
 
 if __name__ == '__main__':

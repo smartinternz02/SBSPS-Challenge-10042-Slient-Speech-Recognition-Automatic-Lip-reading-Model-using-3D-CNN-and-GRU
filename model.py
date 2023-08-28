@@ -1,5 +1,7 @@
-from tensorflow.keras.models import Sequential 
-from tensorflow.keras.layers import Conv3D, LSTM, Dense, Dropout, Bidirectional, MaxPool3D, Activation, Reshape, SpatialDropout3D, BatchNormalization, TimeDistributed, Flatten, Masking
+import os
+import tensorflow.python.keras
+from keras.models import Sequential 
+from keras.layers import Conv3D, LSTM, Dense, Dropout, Bidirectional, MaxPool3D, Activation, Reshape, SpatialDropout3D, BatchNormalization, TimeDistributed, Flatten, Masking
 
 def load_model():
     model = Sequential()
