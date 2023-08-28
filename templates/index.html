@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lip Lingo</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Inter"
       rel="stylesheet"
@@ -53,7 +53,7 @@
         <li><a class="button" href="#home">Home</a></li>
         <li><a class="button" href="#features">How it works</a></li>
         <li><a class="button" href="model.html">Try it out!</a></li>
-        <li><a class="button" href="team">Team</a></li>
+        <li><a class="button" href="#team">Team</a></li>
       </ul>
       <div class="menu">
         <div class="menu-line"></div>
@@ -72,6 +72,7 @@
               style="
                 color: transparent;
                 background-clip: text;
+                -webkit-background-clip: text;
                 background-image: linear-gradient(
                   to right,
                   var(--tw-gradient-stops)
@@ -84,7 +85,7 @@
           </p>
         </div>
         <div class="right">
-          <img class="hero-image" src="images/Language-translator.svg" />
+          <img class="hero-image" src="../static/images/Language-translator.svg" />
         </div>
         <a href="#" class="badge"
           >Introducing Lip Lingo!<svg
@@ -98,9 +99,280 @@
             <path
               fill-rule="evenodd"
               d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
-            ></path></svg
-        ></a>
+            ></path></svg></a>
       </div>
     </section>
+
+    <section id="features">
+      <div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="team">
+        <div
+          style=
+          "padding-top: 5%;
+            padding-bottom: 6rem;
+            background-color: #ffffff;"
+        >
+          <div
+            style="
+              display: flex;
+              padding-left: 1rem;
+              padding-right: 1rem;
+              flex-direction: column;
+              justify-content: space-between;
+              max-width: 1280px;
+
+              @media (min-width: 640px) {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                flex-direction: row;
+              }
+
+              @media (min-width: 1024px) {
+                padding-left: 2rem;
+                padding-right: 2rem;
+              }
+            "
+          >
+            <div
+              style="
+                order: 9999;
+
+                @media (min-width: 640px) {
+                  order: -9999;
+                  width: 50%;
+                }
+              "
+            >
+              <ul
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(2, minmax(0, 1fr));
+                "
+              >
+                <li
+                  style="
+                    padding: 1.25rem;
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                    text-align: center;
+                    background-color: #f3f4f6;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <a href="#"
+                        ><img
+                          style="
+                            margin-bottom: 0.75rem;
+                            border-radius: 9999px;
+                            width: 6rem;
+                            height: 6rem;
+                          "
+                          src="../static/images/man-with-short-hair-avatar.svg"
+                      /></a>
+                    </div>
+                    <div style="text-align: center">
+                      <h4
+                        style="
+                          font-size: 1.125rem;
+                          line-height: 1.75rem;
+                          font-weight: 600;
+                          line-height: 1.5rem;
+                          color: #111827;
+                          transition-property: background-color, border-color,
+                            color, fill, stroke, opacity, box-shadow, transform;
+                          transition-timing-function: cubic-bezier(
+                            0.4,
+                            0,
+                            0.2,
+                            1
+                          );
+                          transition-duration: 300ms;
+                          transition-duration: 500ms;
+                          transition-timing-function: cubic-bezier(
+                            0.4,
+                            0,
+                            0.2,
+                            1
+                          );
+                        "
+                      >
+                        <a
+                          href="#"
+                          style="
+                            transition-property: background-color, border-color,
+                              color, fill, stroke, opacity, box-shadow,
+                              transform;
+                            transition-timing-function: cubic-bezier(
+                              0.4,
+                              0,
+                              0.2,
+                              1
+                            );
+                            transition-duration: 300ms;
+                            transition-duration: 500ms;
+                            transition-timing-function: cubic-bezier(
+                              0.4,
+                              0,
+                              0.2,
+                              1
+                            );
+                            :hover {
+                              color: #4f46e5;
+                            }
+                          "
+                          >Ananth P</a
+                        >
+                      </h4>
+                      <p
+                        style="
+                          font-size: 0.875rem;
+                          line-height: 1.25rem;
+                          line-height: 1.5rem;
+                          color: #6b7280;
+                          text-transform: uppercase;
+                        "
+                      >
+                        web developer
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  style="
+                    padding: 1.25rem;
+                    padding-top: 2.5rem;
+                    padding-bottom: 2.5rem;
+                    text-align: center;
+                    background-color: #f3f4f6;
+                  "
+                >
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <a href="#"
+                        ><img
+                          style="
+                            margin-bottom: 0.75rem;
+                            width: 6rem;
+                            height: 6rem;
+                            border-radius: 9999px;
+                            border:1px solid #111111;
+                          "
+                          src="../static/images/engineer.svg"
+                      /></a>
+                    </div>
+                    <div style="text-align: center">
+                      <h4
+                        style="
+                          font-size: 1.125rem;
+                          line-height: 1.75rem;
+                          font-weight: 600;
+                          line-height: 1.5rem;
+                          color: #111827;
+                        "
+                      >
+                        <a
+                          href="#"
+                          >Rishikeshav Ravichandran</a>
+                      </h4>
+                      <p
+                        style="
+                          font-size: 0.875rem;
+                          line-height: 1.25rem;
+                          line-height: 1.5rem;
+                          color: #6b7280;
+                          text-transform: uppercase;
+                        "
+                      >
+                        misunderstood genius
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              style="
+                margin-bottom: 2.5rem;
+                order: -9999;
+                text-align: left;
+
+                @media (min-width: 640px) {
+                  margin-left: 2.5rem;
+                  order: 9999;
+                  width: 50%;
+                }
+                @media (min-width: 768px) {
+                  margin-left: 6rem;
+                }
+              "
+            >
+              <p
+                style="
+                  margin-top: 1rem;
+                  font-size: 225%;
+                  line-height: 1.25rem;
+                  line-height: 1.75rem;
+                  color: #6b7280;
+                "
+              >
+                THE TEAM
+              </p>
+              <h1
+                style="
+                  font-size: 350%;
+                  line-height: 2.25rem;
+                  font-weight: 800;
+                  letter-spacing: -0.025em;
+                  line-height: 1.5;
+                  color: #111827;
+
+                  @media (min-width: 640px) {
+                    font-size: 3rem;
+                    line-height: 1;
+                  }
+                "
+              >
+                Meet Our <span style="color: #4f46e5">Team</span>
+              </h1>
+              <p
+                style="
+                  margin-top: 1rem;
+                  font-weight: 300;
+                  line-height: 1.75rem;
+                  color: #6b7280;
+                "
+              >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Maiores impedit perferendis suscipit eaque, iste dolor
+                cupiditate blanditiis ratione.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
   </body>
+   <script src="../static/js/script.js"></script>
 </html>

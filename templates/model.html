@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <title>Document</title>
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+  <body>
+    <nav class="navbar">
+      <label class="logo" style="font-weight: 800">
+        <svg
+          class="logo"
+          width="200"
+          height="200"
+          viewBox="0 0 200 200"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_105_284)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0H50V50H0V0ZM100 50H50V100H0V150H50V200H100V150H150V200H200V150H150V100H200V50H150V0H100V50ZM100 100H150V50H100V100ZM100 100V150H50V100H100Z"
+              fill="url(#paint0_linear_105_284)"
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_105_284"
+              x1="100"
+              y1="0"
+              x2="100"
+              y2="200"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#A7B5FF" />
+              <stop offset="1" stop-color="#F3ACFF" />
+            </linearGradient>
+            <clipPath id="clip0_105_284">
+              <rect width="200" height="200" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        Lip Lingo</label
+      >
+      <ul>
+        <li><a class="button" href="/">Home</a></li>
+        <li><a class="button" href="/">How it works</a></li>
+      </ul>
+      <div class="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+    <!-- {% for text in video_texts %}
+    <p>{{ video_texts[text] }}</p>
+  {% endfor %} -->
+    <!-- 
+    <video id="video" width="640" height="480" controls>
+      <source id="videoSource" src="s1/bbaf2n.mpg" type="video/mpeg"></video> -->
+    <div>
+      <div>
+        <label for="videoDropdown">Select a video:</label>
+        <select id="videoDropdown">
+          {% for video_filename in video_list %}
+          <option value="{{ video_filename }}">{{ video_filename }}</option>
+          {% endfor %}
+        </select>
+        <video width="700" height="350" controls id="video">
+          <source id="videoSource" src="static/data/s1/bbaf2n.mp4" type="video/mp4">
+      </video>
+      <!-- {{url_for('static', filename='data/s1/bbaf2n.mp4')}} -->
+      </div>
+    </div>
+  </body>
+  <script src="../static/js/script.js"></script>
+</html>

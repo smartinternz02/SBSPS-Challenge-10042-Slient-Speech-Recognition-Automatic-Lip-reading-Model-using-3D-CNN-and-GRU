@@ -1,32 +1,46 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, url_for
 import loads, model, tensorflow as tf
-import matplotlib.pyplot as plt
+import os
 
 app = Flask(__name__, template_folder='templates/')
+app.static_folder = 'static'
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def landing_page():
     return render_template('index.html')
 
-@app.route('/', methods=['POST'])
-def predict():
-    video_file = request.files['videoFile']
-    path = 'videos/' + video_file.filename
-    video_file.save(path)
 
-    video = loads.load_video(path)
+@app.route('/model.html')
+def model_page():
+    video_list = get_video_list()
+    video_texts = get_video_texts()
+    return render_template('model.html', video_list=video_list, video_texts=video_texts)
 
-    DLmodel = model.load_model()
-    yhat = DLmodel.predict(tf.expand_dims(video, axis=0))
-    decoder = tf.keras.backend.ctc_decode(yhat, [75], greedy=True)[0][0].numpy()
-    
-    prediction = tf.strings.reduce_join(loads.num_to_char(decoder)).numpy().decode('utf-8')
+def get_video_list():
+    video_folder = 'static/data/s1'
+    video_list = [filename for filename in os.listdir(video_folder) if filename.endswith('.mp4')]
+    return video_list
 
-    print(prediction)
+def get_video_texts():
+    video_texts = {}
+    align_list = [filename for filename in os.listdir('static/data/alignments/s1') if filename.endswith('.align')]
 
+    for align in align_list:
+        with open(f'static/data/alignments/s1/{align}') as file:
+            words = file.read().splitlines()
+            words = words[1:-1]
+            final = []
+            for word in words:
+                temp = word.split(" ")
+                final.append(temp[-1])
+            stri = ""
+            for wordss in final:
+                stri += wordss
+                stri += " "
+            video_texts[align] = stri[:-1]
 
-    return render_template('index.html')
+    return video_texts
 
 
 if __name__ == '__main__':
-    app.run() 
+    app.run(debug=True) 
