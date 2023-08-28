@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+  
   <body>
     <nav class="navbar">
       <label class="logo" style="font-weight: 800">
@@ -55,7 +56,6 @@
         <div class="menu-line"></div>
       </div>
     </nav>
-    <p>{{ prediction }}</p>
     <!-- {% for text in video_texts %}
     <p>{{ video_texts[text] }}</p>
   {% endfor %} -->
@@ -73,10 +73,41 @@
         <video width="700" height="350" controls id="video">
           <source id="videoSource" src="static/data/s1/bbaf2n.mp4" type="video/mp4">
       </video>
-      <button id="submitBtn">Submit</button>
-      <!-- {{url_for('static', filename='data/s1/bbaf2n.mp4')}} -->
+      <button id="submitBtn">Predict</button>
       </div>
+      <p id="prediction">
+        <div id="loading" style="display: none;">
+          <img src="giphy.gif" alt="Loading..." />
+        </div>
+      </p>
+
+      <p id="actual">
+      </p>
     </div>
   </body>
   <script src="../static/js/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $("#submitBtn").click(function(){
+      $("#loading").show();
+      var selected_video = $("#videoDropdown").val();
+      $.ajax({
+          url: '/process_selected_video',
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify({video: selected_video}),
+          dataType: 'json',
+          success: function(response){
+              $("#prediction").text(response.prediction);
+              $("#actual").text(response.actual);
+          },
+          error: function(error){
+              console.log(error);
+          },
+          complete: function(){
+            $("#loading").hide();
+        }
+      });
+    });
+  </script>
 </html>

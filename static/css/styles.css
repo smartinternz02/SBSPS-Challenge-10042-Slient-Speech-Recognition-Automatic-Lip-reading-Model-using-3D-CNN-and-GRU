@@ -13,9 +13,11 @@ a {
 }
 .navbar {
   color: #010101;
-  height: 90px;
+  height: 80px;
   width: 100%;
   display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  position: sticky;
 }
 
 svg.logo {
@@ -36,7 +38,7 @@ label.logo {
 .navbar ul {
   margin-left: auto;
   margin-right: 25px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 

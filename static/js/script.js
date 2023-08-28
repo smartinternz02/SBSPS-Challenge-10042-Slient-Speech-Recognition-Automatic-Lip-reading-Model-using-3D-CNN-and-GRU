@@ -1,5 +1,7 @@
 const menu = document.querySelector(".menu");
 const menuList = document.querySelector("nav ul");
+
+const pred = document.getElementById('prediction');
 menu.addEventListener("click", () => {
   menuList.classList.toggle("showmenu");
 });
@@ -17,26 +19,8 @@ document.getElementById('videoDropdown').addEventListener('change', function() {
 // var source = document.getElementById('videoSource');
 // console.log(source.src);  
 
-const videoDropdown = document.getElementById('videoDropdown');
 const submitBtn = document.getElementById('submitBtn');
-
-        
-submitBtn.addEventListener('click', function() {
-    const selectedVideo = videoDropdown.value;
-           
-    fetch('/process_selected_video', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ video: selectedVideo })
-    })
-    .then(response => response.json())
-    .then(data => {
-
-    console.log(data);
+const videoDropdown = document.getElementById('videoDropdown');
+videoDropdown.addEventListener('change', function() {
+  pred.textContent = "";
 })
-.catch(error => {
-    console.error('Error:', error);
-});
-});
