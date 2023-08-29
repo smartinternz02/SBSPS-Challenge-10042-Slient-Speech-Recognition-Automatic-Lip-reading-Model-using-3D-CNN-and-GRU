@@ -31,3 +31,8 @@ function changeColor(){
   actualo.classList.remove("dark:text-gray-500");
   actualo.classList.add("dark:text-slate-300");
 }
+
+// function loadMoreInfo(){
+//     var url = "http://www.apple.com";
+//     window.location.href = url;
+// }

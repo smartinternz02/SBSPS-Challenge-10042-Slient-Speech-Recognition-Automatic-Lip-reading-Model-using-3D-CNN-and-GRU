@@ -112,7 +112,7 @@
           >
             <li>
               <a
-                href="index.html"
+                href="/"
                 class="flex items-center justify-center space-x-2 rounded-full text-gray-700 hover:bg-slate-700 hover:text-white dark:text-white bg-inherit border border-gray-900 px-5 py-2 shadow-lg transition-all dark:hover:bg-purple-700"
                 aria-current="page"
                 >Home</a
@@ -120,14 +120,14 @@
             </li>
             <li>
               <a
-                href="#howItWorks"
+                href="/#howItWorks"
                 class="flex items-center justify-center space-x-2 rounded-full text-gray-700 hover:bg-slate-700 hover:text-white dark:text-white bg-inherit border border-gray-900 px-5 py-2 shadow-lg transition-all dark:hover:bg-purple-700"
                 >How it Works</a
               >
             </li>
             <li>
               <a
-                href="#team"
+                href="/#team"
                 class="flex items-center justify-center space-x-2 rounded-full bg-inherit text-gray-700 hover:bg-slate-700 hover:text-white dark:text-white bg-inherit border border-gray-900 px-5 py-2 shadow-lg transition-all dark:hover:bg-purple-700"
                 >Team</a
               >
@@ -157,10 +157,10 @@
           actual text is also displayed below.
         </p>
       </div>
-      <div class="block justify-center w-[60%]">
+      <div class="mx-auto justify-center w-[60%]">
         <label
           for="videoDropdown"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class=" block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Select a video:
         </label>
         <select
@@ -173,8 +173,8 @@
           {% endfor %}
         </select>
       </div>
-      <div class="grid grid-rows-3 grid-flow-col gap-4">
-        <div class="row-span-3 my-2">
+      <div class="grid grid-rows-3 grid-flow-col gap-2 justify-center">
+        <div class="h-auto row-span-3 my-2">
           <video
             class="aspect-video"
             width="700"
@@ -238,13 +238,13 @@
             Loading...
           </button>
         </div>
-
-        <div>
+        
+        <div class="">
           <a
             href=""
             class="pointer-events-none my-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
-            <h5
+          <h5
               class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
               Actual Sentence from the video:
@@ -254,13 +254,13 @@
             </p>
           </a>
         </div>
-        <div>
+        <div class="row-span-1">
           <a
             href=""
             class="pointer-events-none my-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
           >
             <h5
-              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
               Prediction:
             </h5>
@@ -273,10 +273,44 @@
           </a>
         </div>
       </div>
+      <div class="flex flex-col items-center justify-center">
+        <a
+            href=""
+            class="pointer-events-none my-2 block max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          >
+        <p id="exampleImage" class="mb-2 font-normal text-gray-700 dark:text-slate-300">
+          This is an example of what the model sees...
+        </p>
+        <img src="/static/images/modelVision.png"></a> 
+
+        <button
+            id="learnMoreBtn"
+            onClick="loadMoreInfo()"
+            type="button"
+            class=" my-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Read about our project submission and how it works!
+            <svg
+              class="w-3.5 h-3.5 ml-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </button>
+      </div>
     </div>
-    <footer class="bg-white dark:bg-gray-800">
+    <footer class="border-t-black bg-slate-200 dark:bg-gray-800">
       <div class="max-w-screen-xl p-4 py-6 lg:py-10 md:p-8 lg:p-10">
-        <ul class="flex justify-center space-x-5 text-2xl">
+        <ul class="flex items-center justify-center space-x-5 text-3xl">
           <li>
             <a
               href="https://github.com/RandomOgre101/Lip-Reading-Web-App"
@@ -315,8 +349,8 @@
           data: JSON.stringify({ video: selected_video }),
           dataType: "json",
           success: function (response) {
-            $("#prediction").text(response.prediction);
             $("#actual").text(response.actual);
+            $("#prediction").text(response.prediction);
           },
           error: function (error) {
             console.log(error);
