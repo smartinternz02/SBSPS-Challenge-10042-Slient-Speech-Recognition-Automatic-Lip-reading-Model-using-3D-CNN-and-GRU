@@ -6,7 +6,9 @@ module.exports = {
   content: [
   "./templates/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {backgroundImage: {
+      'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
+    }},
   },
   plugins: [function ({ matchUtilities, theme }) {
     matchUtilities(
