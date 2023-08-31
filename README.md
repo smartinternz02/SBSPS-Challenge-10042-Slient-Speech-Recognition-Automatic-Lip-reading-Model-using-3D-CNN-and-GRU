@@ -28,11 +28,11 @@ The most probable word segmentation and transcription is returned to the user as
 
 ## Ananth 
 https://www.credly.com/badges/4db75492-a125-4516-932a-51c2ce27198c/public_url
-
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="31042e5a-5649-4670-af18-80ca94d7d5b0" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+https://www.credly.com/badges/31042e5a-5649-4670-af18-80ca94d7d5b0/public_url
 
 ## Rishi
-
+https://www.credly.com/badges/0dce84bf-6de1-454b-93bf-cdb3683e1e0a/public_url
+https://www.credly.com/badges/f42174e4-d696-4cd4-a81e-f86f897793e8/public_url
 
 
 
